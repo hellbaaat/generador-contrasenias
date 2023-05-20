@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Contraseñas</title>
+</head>
+<body>
+    <h1>Generador de Contraseñas</h1>
+    <form action="#">
+        <label for="length">Longitud de la contraseña (1-16): </label>
+        <input type="number" id="length" min="1" max="16"><br>
+
+        <label for="upper">Usar letras mayúsculas?</label>
+        <input type="checkbox" id="upper"><br>
+
+        <label for="lower">Usar letras minúsculas?</label>
+        <input type="checkbox" id="lower"><br>
+
+        <label for="number">Usar números?</label>
+        <input type="checkbox" id="number"><br>
+
+        <label for="symbol">Usar símbolos?</label>
+        <input type="checkbox" id="symbol"><br>
+
+        <input type="submit" value="Generar Contraseña">
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const length = document.getElementById('length').value;
+            const tickUpper = document.getElementById('upper').checked;
+            const tickLower = document.getElementById('lower').checked;
+            const tickNumber = document.getElementById('number').checked;
+            const tickSymbol = document.getElementById('symbol').checked;
+
+            // Envía los datos al servidor para generar la contraseña
+            // Puedes usar Ajax o enviar una solicitud POST al servidor
+            // Aquí, simplemente mostraremos la contraseña generada en la consola del navegador
+            console.log('Generando contraseña...');
+            console.log('Longitud:', length);
+            console.log('Usar mayúsculas:', tickUpper);
+            console.log('Usar minúsculas:', tickLower);
+            console.log('Usar números:', tickNumber);
+            console.log('Usar símbolos:', tickSymbol);
+        });
+    </script>
+</body>
+</html>
